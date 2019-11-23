@@ -2,11 +2,11 @@ import React from "react";
 
 function App({ children }) {
   return (
-    <div>
-      <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto px-4 py-8 md:p-8 w-full">
+    <>
+      <main className="relative bg-gray-100 w-full h-full min-h-screen">
         {children}
       </main>
-    </div>
+    </>
   );
 }
 
