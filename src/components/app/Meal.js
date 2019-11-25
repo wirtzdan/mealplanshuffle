@@ -1,25 +1,31 @@
 import React from "react";
 import { Unlock } from "react-feather";
 
-function Meal(props) {
+function Meal({ name, image, readyInMinutes }) {
   return (
-    <div className="flex bg-white max-w-4xl rounded-lg overflow-hidden items-center justify-between mx-4 shadow mb-4">
-      <div className="flex">
-        <img
-          className="h-20 w-20"
-          src="https://images.unsplash.com/photo-1475856033578-76b4a228f5c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80"
-        />
-        <div className="ml-4  flex flex-col justify-center items-start">
-          <span className="text-lg mb-1 font-medium">Delicous Cookies</span>
-          <div className="inline-flex items-center justify-center bg-blue-200 text-blue-700 rounded px-4 text-sm uppercase font-medium ">
-            <span>30 min</span>
+    <div className="my-1 px-1 w-full md:w-1/5 lg:px-3">
+      <div className="relative flex items-center justify-between overflow-hidden bg-white rounded shadow md:flex-col md:h-56">
+        <div className="w-full h-48 flex md:flex-col">
+          <div
+            className="w-full h-48 bg-cover"
+            style={{
+              backgroundImage: `url('${image}')`
+            }}
+          ></div>
+          <div className="flex flex-col items-start justify-between py-4 ml-4">
+            <span className="max-w-xs mb-1 font-medium leading-none">
+              {name}
+            </span>
+            <div className="inline-flex items-center justify-center px-4 text-sm font-medium text-blue-700 uppercase bg-blue-200 rounded ">
+              <span>{readyInMinutes} min</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <button className="mr-4">
-          <Unlock />
-        </button>
+        <div>
+          <button className="p-3 mr-4 border border-gray-200 rounded-full md:absolute md:top-0 md:right-0 md:bg-white md:m-2">
+            <Unlock />
+          </button>
+        </div>
       </div>
     </div>
   );

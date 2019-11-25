@@ -4,6 +4,8 @@ import App from "../components/app/App";
 import SEO from "../components/website/SEO";
 import MealPlanMenu from "../components/app/MealplanMenu";
 import Meal from "../components/app/Meal";
+import randomRecipes from "../data/recipes.json";
+import Container from "../components/app/Container";
 
 function IndexPage() {
   return (
@@ -12,16 +14,19 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
-      <section className="text-center">
-        <h2 className="bg-gray-200 text-2xl font-bold inline-block my-8 p-3">
-          This is the app
-        </h2>
-      </section>
-      <Meal />
-      <Meal />
-      <Meal />
-      <Meal />
-      <Meal />
+      <Container>
+        <div className="flex flex-wrap -mx-1 overflow-hidden lg:-mx-3">
+          {randomRecipes.recipes.slice(0, 5).map(meal => {
+            return (
+              <Meal
+                name={meal.title}
+                image={meal.image}
+                readyInMinutes={meal.readyInMinutes}
+              />
+            );
+          })}
+        </div>
+      </Container>
       <MealPlanMenu />
     </App>
   );
