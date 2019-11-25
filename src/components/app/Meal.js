@@ -4,10 +4,10 @@ import { Unlock } from "react-feather";
 function Meal({ name, image, readyInMinutes }) {
   return (
     <div className="my-1 px-1 w-full md:w-1/5 lg:px-3">
-      <div className="relative flex items-center justify-between overflow-hidden bg-white rounded shadow md:flex-col md:h-56">
-        <div className="w-full h-48 flex md:flex-col">
+      <div className="relative flex items-center justify-between overflow-hidden bg-white rounded shadow md:flex-col">
+        <div className="w-full h-24 flex md:flex-col md:h-full">
           <div
-            className="w-full h-48 bg-cover"
+            className="w-full h-24 bg-cover md:h-48 md:w-full max-w-12rem md:max-w-full"
             style={{
               backgroundImage: `url('${image}')`
             }}

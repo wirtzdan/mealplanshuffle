@@ -13,6 +13,12 @@
   max-width: 20em;
 }
 
+/* Image max width */
+.max-w-12rem {
+  max-width: 12rem;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
