@@ -15,7 +15,7 @@ function IndexPage() {
         title="Home"
       />
       <Container>
-        <div className="flex flex-wrap -mx-1 overflow-hidden lg:-mx-3">
+        <div className="h-full flex flex-wrap -mx-1 overflow-hidden lg:-mx-3">
           {randomRecipes.recipes.slice(0, 5).map(meal => {
             return (
               <Meal
